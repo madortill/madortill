@@ -1,0 +1,27 @@
+.wholeNav {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding-top: 0.65vh;
+    padding-bottom: 0.65vh;
+    width: 80%;
+}
+
+.barContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: black;
+    color: white;
+    direction: rtl;
+    width: 100%;
+}
+
+.navItems {
+    cursor: pointer;
+}
+
+.searchIcon {
+    width: 1.5vw;
+    cursor: pointer;
+}

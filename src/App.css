@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "aran";
+  src: url(./assets/fonts/OS-Aran-Free-V2.00/‏‏‏‏OS-Aran-Free-V2.00/OS-Aran-FFC-Webfonts/os_aran_400ffc-webfont.woff);
+}
+
+html, body {
+  font-family: "aran";
+  font-size: 1.1rem;
+}
+
+.NavStyle {
+  width: 100%;
+  position: fixed;
+  top: 0vh;
+}

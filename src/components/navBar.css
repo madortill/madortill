@@ -4,21 +4,10 @@
     padding-left: 1vw;
     cursor: pointer;
 }
-/* .cf:before,
-.cf:after {
-    content: " ";
-    display: table;
+
+.madortillName {
+    pointer-events: none;
 }
-
-.cf:after {
-    clear: both;
-}
-
-.cf {
-    *zoom: 1;
-} */
-
-/* ALL */
 
 .row .three{
   padding: 80px 30px;
@@ -36,7 +25,7 @@
 }
 
 .hamburger .line{
-  width: 40px;
+  width: 30px;
   height: 2px;
   background-color: #ecf0f1;
   display: block;
@@ -76,6 +65,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .menuIcon {
@@ -84,17 +74,3 @@
     cursor: pointer;
 }
 
-.closeNav {
-    animation: Close 0.7s ease-out forwards;
-}
-
-@keyframes Close {
-    from {
-        position: fixed;
-        right: 0vw;
-    }
-    to {
-        position: fixed;
-        right: -20vw;
-    }
-}

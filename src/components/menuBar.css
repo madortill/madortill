@@ -1,39 +1,7 @@
-/* .wholeNav {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    padding-top: 0.65vh;
-    padding-bottom: 0.65vh;
-    width: 80%;
-}
-
-.navMenu {
-    display: flex; */
-    /* grid-template-columns: repeat(1, 1fr); */
-    /* grid-template-rows: repeat(1, 1fr); */
-    /* grid-column-start: 1;
-  grid-column-end: 6; */
-    /* justify-content: space-around;
-    flex-direction: row;
-    background-color: black;
-    color: white;
-    direction: rtl;
-    width: 100%;
-}
-
-.barContainer {
-    display: flex;
-    flex-direction: column;
-}
-
-.navItems {
-    cursor: pointer;
-} */
-
 .barContainer {
     display: flex;
     position: fixed;
-    right: -30vw;
+    right: -20vw;
     height: 100%;
     width: 20%;
     flex-direction: column;
@@ -58,31 +26,28 @@
 }
 
 .openNav { 
-    animation: Open 0.7s ease-out forwards;
+    animation: OpenNavAni 0.7s ease-out forwards;
 }
 
-@keyframes Open {
+@keyframes OpenNavAni {
     from {
-        position: fixed;
         right: -20vw;
     }
     to {
-        position: fixed;
         right: 0vw;
     }
 }
 
 .closeNav {
-    animation: Close 0.7s ease-out forwards;
+    animation: CloseNavAni 0.7s ease-out forwards;
 }
 
-@keyframes Close {
-    from {
-        position: fixed;
+
+@keyframes CloseNavAni {
+    0% {
         right: 0vw;
     }
-    to {
-        position: fixed;
+    100% {
         right: -20vw;
     }
 }

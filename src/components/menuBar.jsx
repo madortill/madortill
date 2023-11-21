@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import './menuBar.css'
 import MenuDropDown from './menuDropDown'
 
@@ -23,6 +23,7 @@ const NavBar = (props) => {
         }
     ];
 
+    const menuRef = useRef();
     const wholeNav = [];
     const [currentItem, setCurrentItem] = useState("");
 
@@ -35,11 +36,10 @@ const NavBar = (props) => {
     }
 
     return (
-        <div className={props.onMenu ? ['barContainer openNav'] : [props.firstTime == 0 ? 'barContainer' : 'barContainer closeNav']}>
+        <div ref={menuRef} className={props.onMenu ? 'openNav barContainer' : 'closeNav barContainer'}>
             <div className='mainNav'>
                 {wholeNav}
             </div>
-            {/* {isHovering && <MenuDropDown menu={navbarMenu[1]["list"]} />} */}
         </div>
     )
 }

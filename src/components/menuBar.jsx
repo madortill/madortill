@@ -1,14 +1,14 @@
-import { useEffect, useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './menuBar.css'
 import MenuDropDown from './menuDropDown'
 
-const NavBar = (props) => {
+const MenuBar = (props) => {
 
     const navbarMenu = [
         {
             "item": "קצת עלינו",
             "list": []
-        }, 
+        },
         {
             "item": "מאגר DIY",
             "list": ["תעודות הוקרה", "תעודות הצטיינות", "הזמנות", "ברכות יום הולדת"]
@@ -24,24 +24,38 @@ const NavBar = (props) => {
     ];
 
     const menuRef = useRef();
-    const wholeNav = [];
     const [currentItem, setCurrentItem] = useState("");
+    const [isChosen, setChosenItem] = useState(false);
 
-    for (let i = 0; i < navbarMenu.length; i++) {
-        wholeNav.push(<div key={navbarMenu[i]["item"]}><div className="navItems" onClick={changeCurrentItem} >{navbarMenu[i]["item"]}</div></div>)
+
+    function changeCurrentItem(event, currChosenObject) {
+        if (event.currentTarget.innerText !== currentItem["item"]) {
+            setCurrentItem(currChosenObject);
+        } else {
+            setCurrentItem("");
+        }
     }
 
-    function changeCurrentItem (event) {
-        setCurrentItem(event.currentTarget.innerText);
-    }
+    useEffect(() => {
+        for (let i = 0; i < navbarMenu.length; i++) {
+            if (navbarMenu[i]["item"] === currentItem["item"]) {
+                setChosenItem(true);
+                break;
+            } else {
+                setChosenItem(false);
+            }
+        }
+    }, [currentItem])
 
     return (
         <div ref={menuRef} className={props.onMenu ? 'openNav barContainer' : 'closeNav barContainer'}>
             <div className='mainNav'>
-                {wholeNav}
+                {navbarMenu.map((title) => (
+                    <div key={title.item}><div className="navItems" onClick={(event) => changeCurrentItem(event, title)} >{title.item}</div>
+                    {(isChosen && currentItem["item"] === title.item) ? <MenuDropDown currentItem={currentItem} /> : <></>}</div>
+                ))}
             </div>
         </div>
     )
 }
-
-export default NavBar 
+export default MenuBar 

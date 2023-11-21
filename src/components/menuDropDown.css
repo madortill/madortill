@@ -1,7 +1,20 @@
 .menuItem {
     border-style: solid none none none;
+    width: 85%;
     border-width: 0.05vh;
-    background-color: black;
-    color: white;
+    padding: 0.25vh;
+    color: rgba(255, 255, 255, 0.829);
     direction: rtl;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.totalMenuItems {
+    display: flex;
+    flex-direction: column;
+}
+
+.menuItem:hover {
+    color: white;
 }

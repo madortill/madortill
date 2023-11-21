@@ -1,17 +1,17 @@
 import './menuDropDown.css'
 
-const NavDropDown = (props) => {
+const MenuDropDown = (props) => {
     const dropDownList = [];
 
-    for (let i = 0; i < props.menu.length; i++) {
-        dropDownList.push(<div key={props.menu[i]} className='menuItem'>{props.menu[i]}</div>)
+    for (let i = 0; i < props.currentItem["list"].length; i++) {
+        dropDownList.push(<div key={props.currentItem["list"][i]} className='menuItem'>{props.currentItem["list"][i]}</div>)
     }
 
     return (
-        <div>
+        <div className='totalMenuItems'>
             {dropDownList}
         </div>
     )
 }
 
-export default NavDropDown
+export default MenuDropDown

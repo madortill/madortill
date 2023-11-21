@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './menuBar.css'
 import MenuDropDown from './menuDropDown'
 
-const NavBar = () => {
+const NavBar = (props) => {
 
     const navbarMenu = [
         {
@@ -25,18 +25,9 @@ const NavBar = () => {
 
     const wholeNav = [];
     const [currentItem, setCurrentItem] = useState("");
-    const [isHovering, setIsHovering] = useState(false);
-
-    const handleMouseOver = () => {
-        setIsHovering(true);
-    };
-    
-    const handleMouseOut = () => {
-        setIsHovering(false);
-    };
 
     for (let i = 0; i < navbarMenu.length; i++) {
-        wholeNav.push(<div key={navbarMenu[i]["item"]}><div className="navItems" onClick={changeCurrentItem} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{navbarMenu[i]["item"]}</div></div>)
+        wholeNav.push(<div key={navbarMenu[i]["item"]}><div className="navItems" onClick={changeCurrentItem} >{navbarMenu[i]["item"]}</div></div>)
     }
 
     function changeCurrentItem (event) {
@@ -44,7 +35,7 @@ const NavBar = () => {
     }
 
     return (
-        <div className='barContainer'>
+        <div className={props.onMenu ? ['barContainer openNav'] : [props.firstTime == 0 ? 'barContainer' : 'barContainer closeNav']}>
             <div className='mainNav'>
                 {wholeNav}
             </div>

@@ -2,12 +2,13 @@ import './navbar.css'
 import MenuBar from "./menuBar"
 import { useState } from 'react'
 import Search from "../assets/search.svg"
-import MenuBarIcon from "../assets/menuBar.svg"
 
 const Navbar = () => {
     const [onMenu, setOnMenu] = useState(false);
+    const [isActive, toggleActive] = useState(true)
 
-    function openMenu () {
+    function openMenu (event) {
+        toggleActive(!isActive);
         setOnMenu(!onMenu);
     }
 
@@ -16,9 +17,13 @@ const Navbar = () => {
             <div className='menuContainer'>
                 <img src={Search} className="searchIcon" alt="search" />
                 <div>MADOR TILL</div>
-                <img src={MenuBarIcon} className='menuIcon' alt="menu" onClick={openMenu} />
+                <div className={isActive ? "hamburger" : ["hamburger is-active"]} id="hamburger-1" onClick={openMenu}>
+                    <span className="line"></span>
+                    <span className="line"></span>
+                    <span className="line"></span>
+                </div>
             </div>
-            {onMenu && <MenuBar />}
+            <MenuBar onMenu={onMenu} />
         </>
     )
 }

@@ -33,7 +33,7 @@
 .barContainer {
     display: flex;
     position: fixed;
-    right: 0vw;
+    right: -30vw;
     height: 100%;
     width: 20%;
     flex-direction: column;
@@ -55,4 +55,34 @@
     font-size: 1.5rem;
     cursor: pointer;
     padding: 1vh 0vw 1vh 8vw;
+}
+
+.openNav { 
+    animation: Open 0.7s ease-out forwards;
+}
+
+@keyframes Open {
+    from {
+        position: fixed;
+        right: -20vw;
+    }
+    to {
+        position: fixed;
+        right: 0vw;
+    }
+}
+
+.closeNav {
+    animation: Close 0.7s ease-out forwards;
+}
+
+@keyframes Close {
+    from {
+        position: fixed;
+        right: 0vw;
+    }
+    to {
+        position: fixed;
+        right: -20vw;
+    }
 }

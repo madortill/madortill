@@ -1,27 +1,22 @@
-.wholeNav {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    padding-top: 0.65vh;
-    padding-bottom: 0.65vh;
-    width: 80%;
-}
-
-.barContainer {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    background-color: black;
-    color: white;
-    direction: rtl;
-    width: 100%;
-}
-
-.navItems {
+.searchIcon {
+    width: 1.5vw;
+    cursor: pointer;
+    padding-left: 1vw;
     cursor: pointer;
 }
 
-.searchIcon {
-    width: 1.5vw;
+.menuContainer {
+    background-color: black;
+    color: white;
+    padding-top: 1.25vh;
+    padding-bottom: 1.25vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuIcon {
+    padding-right: 1vw;
+    width: 1.8vw;
     cursor: pointer;
 }

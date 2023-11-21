@@ -1,4 +1,7 @@
 .menuItem {
     border-style: solid none none none;
     border-width: 0.05vh;
+    background-color: black;
+    color: white;
+    direction: rtl;
 }

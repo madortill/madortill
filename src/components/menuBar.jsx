@@ -8,28 +8,32 @@ const MenuBar = (props) => {
     const navbarMenu = [
         {
             "item": "קצת עלינו",
-            "list": []
+            "list": [], 
+            "id": 0
         },
         {
             "item": "מאגר DIY",
-            "list": ["תעודות הוקרה", "תעודות הצטיינות", "הזמנות", "ברכות יום הולדת"]
+            "list": ["תעודות הוקרה", "תעודות הצטיינות", "הזמנות", "ברכות יום הולדת"], 
+            "id": 1
         },
         {
             "item": "גלריית תוצרים",
-            "list": ["לומדות", "וידיאו", "פודקאסטים", "מצגות"]
+            "list": ["לומדות", "וידיאו", "פודקאסטים", "מצגות"], 
+            "id": 2
         },
         {
             "item": "חומרי גלם",
-            "list": ["סמלי יחידות", "אייקונים"]
+            "list": ["סמלי יחידות", "אייקונים"], 
+            "id": 3
         }
     ];
 
-    // const arrowRef = useRef();
     const [currentItem, setCurrentItem] = useState("");
     const [isChosen, setChosenItem] = useState(false);
+    const [clickedArrow, setClickedArrow] = useState(false);
+
 
     function changeCurrentItem(event, currChosenObject) {
-
         if (event.currentTarget.innerText !== currentItem["item"]) {
             setCurrentItem(currChosenObject);
         } else {
@@ -39,10 +43,17 @@ const MenuBar = (props) => {
 
     useEffect(() => {
         for (let i = 0; i < navbarMenu.length; i++) {
+            console.log(currentItem);
+
             if (navbarMenu[i]["item"] === currentItem["item"]) {
                 setChosenItem(true);
+                document.getElementById(`arrow${currentItem["id"]}`).classList.add("turnArrow");
                 break;
+            } else if (currentItem["item"] === undefined) {
+                setChosenItem(false);
+                console.log("the queen is here")
             } else {
+                console.log("im just like any other bitch")
                 setChosenItem(false);
             }
         }
@@ -53,10 +64,10 @@ const MenuBar = (props) => {
             <div className='mainNav'>
                 {navbarMenu.map((title) => (
                     <div key={title.item}>
-                    <div className='itemContainer' onClick={(event) => changeCurrentItem(event, title)}>
-                        <div className="navItems">{title.item}</div>
-                        <img src={Arrow} alt="arrow" className={isChosen ? `arrow turnArrow` : `arrow`} />
-                    </div>
+                        <div className='itemContainer' onClick={(event) => changeCurrentItem(event, title)}>
+                            <div className="navItems">{title.item}</div>
+                            {title.list.length !== 0 && <img src={Arrow} alt="arrow" className="arrow" id={`arrow${title.id}`} />}
+                        </div>
                     {(isChosen && currentItem["item"] === title.item) ? <MenuDropDown currentItem={currentItem} /> : <></>}</div>
                 ))}
             </div>

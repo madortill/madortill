@@ -57,6 +57,10 @@
     animation: turnArrowAni 0.6s ease-out forwards;
 }
 
+.turnDownArrow {
+    animation: turnDownArrowAni 0.6s ease-out forwards;
+}
+
 
 @keyframes CloseNavAni {
     0% {
@@ -70,5 +74,11 @@
 @keyframes turnArrowAni {
     100% {
         transform: rotate(180deg);
+    }
+}
+
+@keyframes turnDownArrowAni {
+    100% {
+        transform: rotate(360deg);
     }
 }

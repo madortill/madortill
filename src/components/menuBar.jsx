@@ -37,23 +37,20 @@ const MenuBar = (props) => {
         if (event.currentTarget.innerText !== currentItem["item"]) {
             setCurrentItem(currChosenObject);
         } else {
+
             setCurrentItem("");
         }
     }
 
     useEffect(() => {
+        console.log(clickedArrow);
         for (let i = 0; i < navbarMenu.length; i++) {
-            console.log(currentItem);
-
+            
             if (navbarMenu[i]["item"] === currentItem["item"]) {
                 setChosenItem(true);
                 document.getElementById(`arrow${currentItem["id"]}`).classList.add("turnArrow");
                 break;
-            } else if (currentItem["item"] === undefined) {
-                setChosenItem(false);
-                console.log("the queen is here")
             } else {
-                console.log("im just like any other bitch")
                 setChosenItem(false);
             }
         }
@@ -66,7 +63,7 @@ const MenuBar = (props) => {
                     <div key={title.item}>
                         <div className='itemContainer' onClick={(event) => changeCurrentItem(event, title)}>
                             <div className="navItems">{title.item}</div>
-                            {title.list.length !== 0 && <img src={Arrow} alt="arrow" className="arrow" id={`arrow${title.id}`} />}
+                            {title.list.length !== 0 && <img src={Arrow} alt="arrow" className={ 'arrow'} id={`arrow${title.id}`} />}
                         </div>
                     {(isChosen && currentItem["item"] === title.item) ? <MenuDropDown currentItem={currentItem} /> : <></>}</div>
                 ))}

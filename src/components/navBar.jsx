@@ -1,4 +1,4 @@
-import './navbar.css'
+import './navBar.css'
 import MenuBar from "./menuBar"
 import { useState } from 'react'
 import Search from "../assets/search.svg"

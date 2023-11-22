@@ -24,12 +24,12 @@ const MenuBar = (props) => {
         }
     ];
 
-    const menuRef = useRef();
+    // const arrowRef = useRef();
     const [currentItem, setCurrentItem] = useState("");
     const [isChosen, setChosenItem] = useState(false);
 
-
     function changeCurrentItem(event, currChosenObject) {
+
         if (event.currentTarget.innerText !== currentItem["item"]) {
             setCurrentItem(currChosenObject);
         } else {
@@ -49,11 +49,14 @@ const MenuBar = (props) => {
     }, [currentItem])
 
     return (
-        <div ref={menuRef} className={props.onMenu ? 'openNav barContainer' : 'closeNav barContainer'}>
+        <div className={props.onMenu ? 'openNav barContainer' : 'closeNav barContainer'}>
             <div className='mainNav'>
                 {navbarMenu.map((title) => (
                     <div key={title.item}>
-                    <div className='itemContainer'><div className="navItems" onClick={(event) => changeCurrentItem(event, title)} >{title.item}</div><img src={Arrow} alt="arrow" className='arrow' /></div>
+                    <div className='itemContainer' onClick={(event) => changeCurrentItem(event, title)}>
+                        <div className="navItems">{title.item}</div>
+                        <img src={Arrow} alt="arrow" className={isChosen ? `arrow turnArrow` : `arrow`} />
+                    </div>
                     {(isChosen && currentItem["item"] === title.item) ? <MenuDropDown currentItem={currentItem} /> : <></>}</div>
                 ))}
             </div>

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import './menuBar.css'
 import MenuDropDown from './menuDropDown'
+import Arrow from '../assets/downArrow.svg'
 
 const MenuBar = (props) => {
 
@@ -51,7 +52,8 @@ const MenuBar = (props) => {
         <div ref={menuRef} className={props.onMenu ? 'openNav barContainer' : 'closeNav barContainer'}>
             <div className='mainNav'>
                 {navbarMenu.map((title) => (
-                    <div key={title.item}><div className="navItems" onClick={(event) => changeCurrentItem(event, title)} >{title.item}</div>
+                    <div key={title.item}>
+                    <div className='itemContainer'><div className="navItems" onClick={(event) => changeCurrentItem(event, title)} >{title.item}</div><img src={Arrow} alt="arrow" className='arrow' /></div>
                     {(isChosen && currentItem["item"] === title.item) ? <MenuDropDown currentItem={currentItem} /> : <></>}</div>
                 ))}
             </div>

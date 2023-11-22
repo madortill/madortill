@@ -22,7 +22,17 @@
     direction: rtl;
     font-size: 1.5rem;
     cursor: pointer;
-    padding: 1vh 0vw 1vh 8vw;
+    padding: 1vh 0vw 1vh 5vw;
+}
+
+.itemContainer {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    width: 100%;
+}
+
+.arrow {
+    width: 1.75vw;
 }
 
 .openNav { 

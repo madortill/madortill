@@ -1,17 +1,49 @@
-.showUs {
+/* .showUs {
     margin: 0;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
     float: right;
+    position: static;
+} */
+
+.showUs {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 111vh;
+    position: static;
+    background-position: center;
+    float: right;
+}
+
+.explainMador {
+    position: relative;
+    top: 30vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    direction: rtl;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
 }
 
 .downArrow {
-    position: fixed;
+    position: absolute;
     bottom: 2vh;
-    vertical-align: middle;
-    /* overflow-clip-margin: content-box; */
-    overflow: clip;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3vw;
+    min-width: 3vw;
+    cursor: pointer;
 }
 
 .down {
@@ -23,7 +55,7 @@
       margin-bottom: 0;
     }
     50% {
-      margin-bottom: 0.5vh;
+      margin-bottom: 0.75vh;
     }
     100% {
       margin-bottom: 0;

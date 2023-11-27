@@ -6,7 +6,7 @@ import AboutUs from './components/aboutUs'
 function App() {
 
   return (
-    <div>
+    <div className='containerEverything'>
       <div className="NavStyle">
         <NavBar  />
       </div>

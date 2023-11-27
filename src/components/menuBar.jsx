@@ -50,10 +50,11 @@ const MenuBar = (props) => {
 
                 break;
             } else {
+
                 setChosenItem(false);
             }
         }
-    }, [currentItem, clickedArrow])
+    }, [currentItem])
 
     return (
         <div className={props.onMenu ? 'openNav barContainer' : 'closeNav barContainer'}>

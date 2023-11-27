@@ -2,6 +2,7 @@ import './navBar.css'
 import MenuBar from "./menuBar"
 import { useState } from 'react'
 import Search from "../assets/search.svg"
+import logoMador from '../assets/logoMador.svg'
 
 const Navbar = () => {
     const [onMenu, setOnMenu] = useState(false);
@@ -18,7 +19,7 @@ const Navbar = () => {
         <>
             <div className='menuContainer'>
                 <img src={Search} className="searchIcon" alt="search" />
-                <div className='madortillName'>MADOR TILL</div>
+                <img className='madortillName' src={logoMador} alt="logo" />
                 <div className={isActive ? "hamburger" : "hamburger is-active"} id="hamburger-1" onClick={openMenu}>
                     <span className="line"></span>
                     <span className="line"></span>

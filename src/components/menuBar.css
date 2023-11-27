@@ -34,6 +34,7 @@
 
 .arrow {
     width: 1.25vw;
+    transform: rotate(0deg);
 }
 
 .openNav { 
@@ -78,6 +79,9 @@
 }
 
 @keyframes turnDownArrowAni {
+    0% {
+        transform: rotate(180deg);
+    }
     100% {
         transform: rotate(360deg);
     }

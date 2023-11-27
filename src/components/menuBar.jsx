@@ -13,18 +13,13 @@ const MenuBar = (props) => {
         },
         {
             "item": "מאגר DIY",
-            "list": ["תעודות הוקרה", "תעודות הצטיינות", "הזמנות", "ברכות יום הולדת"], 
+            "list": ["תעודות", "סמלי יחידות", "אייקונים"], 
             "id": 1
         },
         {
             "item": "גלריית תוצרים",
             "list": ["לומדות", "וידיאו", "פודקאסטים", "מצגות"], 
             "id": 2
-        },
-        {
-            "item": "חומרי גלם",
-            "list": ["סמלי יחידות", "אייקונים"], 
-            "id": 3
         }
     ];
 
@@ -34,11 +29,14 @@ const MenuBar = (props) => {
 
 
     function changeCurrentItem(event, currChosenObject) {
+        setClickedArrow(!clickedArrow);
+
         if (event.currentTarget.innerText !== currentItem["item"]) {
             setCurrentItem(currChosenObject);
         } else {
-
             setCurrentItem("");
+            document.getElementById(`arrow${currentItem["id"]}`).classList.add('turnDownArrow');
+            document.getElementById(`arrow${currentItem["id"]}`).classList.remove("turnArrow");
         }
     }
 
@@ -49,12 +47,14 @@ const MenuBar = (props) => {
             if (navbarMenu[i]["item"] === currentItem["item"]) {
                 setChosenItem(true);
                 document.getElementById(`arrow${currentItem["id"]}`).classList.add("turnArrow");
+                document.getElementById(`arrow${currentItem["id"]}`).classList.remove('turnDownArrow');
+
                 break;
             } else {
                 setChosenItem(false);
             }
         }
-    }, [currentItem])
+    }, [currentItem, clickedArrow])
 
     return (
         <div className={props.onMenu ? 'openNav barContainer' : 'closeNav barContainer'}>

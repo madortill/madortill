@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './menuBar.css'
 import MenuDropDown from './menuDropDown'
 import Arrow from '../assets/downArrow.svg'
@@ -41,7 +41,6 @@ const MenuBar = (props) => {
     }
 
     useEffect(() => {
-        console.log(clickedArrow);
         for (let i = 0; i < navbarMenu.length; i++) {
             
             if (navbarMenu[i]["item"] === currentItem["item"]) {

@@ -1,0 +1,31 @@
+.showUs {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    float: right;
+}
+
+.downArrow {
+    position: fixed;
+    bottom: 2vh;
+    vertical-align: middle;
+    /* overflow-clip-margin: content-box; */
+    overflow: clip;
+}
+
+.down {
+    animation: jumpInfinite 1.25s infinite;
+  }
+
+@keyframes jumpInfinite {
+    0% {
+      margin-bottom: 0;
+    }
+    50% {
+      margin-bottom: 0.5vh;
+    }
+    100% {
+      margin-bottom: 0;
+    }
+  }

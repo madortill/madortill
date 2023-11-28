@@ -10,6 +10,7 @@
 .showUs {
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
     width: 100vw;
     height: 111vh;
     position: static;
@@ -17,7 +18,7 @@
     float: right;
 }
 
-.explainMador {
+/* .explainMador {
     position: relative;
     top: 30vh;
     left: 50%;
@@ -27,14 +28,26 @@
     background-color: black;
     color: white;
     font-size: 1.5rem;
-}
+} */
 
 .aboutContainer {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 0;
+    position: static;
 }
+
+.explainMador {
+    width: 40vw;
+    direction: rtl;
+    text-align: center;
+    background-color: black;
+    color: white;
+    /* position: absolute; */
+    top: 120vh;
+}
+
 
 .downArrow {
     position: absolute;

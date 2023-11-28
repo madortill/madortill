@@ -25,32 +25,31 @@ const MenuBar = (props) => {
 
     const [currentItem, setCurrentItem] = useState("");
     const [isChosen, setChosenItem] = useState(false);
-    const [clickedArrow, setClickedArrow] = useState(false);
-
 
     function changeCurrentItem(event, currChosenObject) {
-        setClickedArrow(!clickedArrow);
 
         if (event.currentTarget.innerText !== currentItem["item"]) {
+            if (currentItem["item"] !== undefined) {
+                document.getElementById(`arrow${currentItem["id"]}`).classList.remove("turnArrow");
+                document.getElementById(`arrow${currentItem["id"]}`).classList.add('turnDownArrow');
+            }
             setCurrentItem(currChosenObject);
         } else {
-            setCurrentItem("");
-            document.getElementById(`arrow${currentItem["id"]}`).classList.add('turnDownArrow');
             document.getElementById(`arrow${currentItem["id"]}`).classList.remove("turnArrow");
+            document.getElementById(`arrow${currentItem["id"]}`).classList.add('turnDownArrow');
+            setCurrentItem("");
         }
     }
 
     useEffect(() => {
         for (let i = 0; i < navbarMenu.length; i++) {
-            
+
             if (navbarMenu[i]["item"] === currentItem["item"]) {
                 setChosenItem(true);
                 document.getElementById(`arrow${currentItem["id"]}`).classList.add("turnArrow");
                 document.getElementById(`arrow${currentItem["id"]}`).classList.remove('turnDownArrow');
-
                 break;
             } else {
-
                 setChosenItem(false);
             }
         }
@@ -63,7 +62,7 @@ const MenuBar = (props) => {
                     <div key={title.item}>
                         <div className='itemContainer' onClick={(event) => changeCurrentItem(event, title)}>
                             <div className="navItems">{title.item}</div>
-                            {title.list.length !== 0 && <img src={Arrow} alt="arrow" className={ 'arrow'} id={`arrow${title.id}`} />}
+                            {title.list.length !== 0 && <img src={Arrow} alt="arrow" className='arrow' id={`arrow${title.id}`} />}
                         </div>
                     {(isChosen && currentItem["item"] === title.item) ? <MenuDropDown currentItem={currentItem} /> : <></>}</div>
                 ))}

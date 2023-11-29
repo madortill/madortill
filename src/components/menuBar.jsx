@@ -31,7 +31,7 @@ const MenuBar = (props) => {
         if (event.currentTarget.innerText !== currentItem["item"]) {
             if (currentItem["item"] !== undefined) {
                 document.getElementById(`arrow${currentItem["id"]}`).classList.remove("turnArrow");
-                document.getElementById(`arrow${currentItem["id"]}`).classList.add('turnDownArrow');
+                // document.getElementById(`arrow${currentItem["id"]}`).classList.add('turnDownArrow');
             }
             setCurrentItem(currChosenObject);
         } else {

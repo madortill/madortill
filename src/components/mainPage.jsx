@@ -1,9 +1,9 @@
 import { useRef } from 'react'
 import temporaryPic from '../assets/newYorkPic.svg'
 import arrow from '../assets/downArrow.svg'
-import './aboutUs.css'
+import './mainPage.css'
 
-const AboutUs = () => {
+const MainPage = () => {
 
     const paragraphRef = useRef(null);
 
@@ -15,12 +15,13 @@ const AboutUs = () => {
     }
 
     return (
-        <div className='aboutContainer'>
-            <div className='showUs' style={{backgroundImage: `URL(${temporaryPic})`}} >
-                {/* <img src={temporaryPic} alt="temp" className='showUs'/> */}
-                <img src={arrow} alt="arrow" className='downArrow down' onClick={scrollingDown} />
-            </div>
-            <section style={{}}>
+        <div className='mainContainer'>
+            <section id="section1">
+                <div className='showUs' style={{backgroundImage: `URL(${temporaryPic})`}} >
+                    <img src={arrow} alt="arrow" className='downArrow down' onClick={scrollingDown} />
+                </div>
+            </section>
+            <section style={{ height: "50vh"}} id="section2" >
                 <div className='explainMador' ref={paragraphRef}>
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
@@ -33,4 +34,4 @@ const AboutUs = () => {
     )
 }
 
-export default AboutUs
+export default MainPage

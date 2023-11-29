@@ -1,18 +1,9 @@
-/* .showUs {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    float: right;
-    position: static;
-} */
-
 .showUs {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
     width: 100vw;
-    height: 111vh;
+    height: 100vh;
     position: static;
     background-position: center;
     float: right;
@@ -30,22 +21,22 @@
     font-size: 1.5rem;
 } */
 
-.aboutContainer {
+/* .mainContainer {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 0;
     position: static;
-}
+} */
 
 .explainMador {
-    width: 40vw;
-    direction: rtl;
-    text-align: center;
-    background-color: black;
-    color: white;
-    /* position: absolute; */
-    top: 120vh;
+  width: 40vw;
+  direction: rtl;
+  text-align: center;
+  background-color: black;
+  color: white;
+  position: absolute;
+  top: 120vh;
 }
 
 
@@ -55,6 +46,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 3vw;
+    z-index: 2;
     min-width: 3vw;
     cursor: pointer;
 }

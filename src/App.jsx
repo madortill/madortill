@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import NavBar from './components/navBar'
 import './App.css'
-import AboutUs from './components/aboutUs'
+import MainPage from './components/mainPage'
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
         <NavBar  />
       </div>
       <div className='currentShownPage'>
-        <AboutUs />
+        <MainPage />
       </div>
     </div>
   )

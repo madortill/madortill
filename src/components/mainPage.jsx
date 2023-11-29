@@ -20,6 +20,9 @@ const MainPage = () => {
                 <img src={arrow} alt="arrow" className='downArrow down' onClick={scrollingDown} />
             </section>
             <section id="section2" className='section2'>
+                <div className='videoMador'>
+                    nkt nkkrjtgkjstnbuyntiorb uy otiyoi tvtyo iriubyiont yoi pihiogjhpghjp htp ijpdgthjpdtjy hpdgt yhjpd
+                </div>
                 <div className='explainMador' ref={paragraphRef}>
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.

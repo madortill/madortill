@@ -24,7 +24,7 @@
 }
 
 .hamburger {
-    padding-right: 1vw;
+  padding-right: 1vw;
 }
 
 .hamburger .line{
@@ -63,6 +63,7 @@
 .menuContainer {
     background-color: black;
     color: white;
+    z-index: 1;
     padding-top: 1.25vh;
     padding-bottom: 1.25vh;
     width: 100%;
@@ -72,6 +73,7 @@
 }
 
 .menuIcon {
+  z-index: 1;
     padding-right: 1vw;
     width: 1.8vw;
     cursor: pointer;

@@ -30,13 +30,16 @@ const MenuBar = (props) => {
 
         if (event.currentTarget.innerText !== currentItem["item"]) {
             if (currentItem["item"] !== undefined) {
-                document.getElementById(`arrow${currentItem["id"]}`).classList.remove("turnArrow");
-                // document.getElementById(`arrow${currentItem["id"]}`).classList.add('turnDownArrow');
+                if (currentItem["list"].length !== 0) {
+                    document.getElementById(`arrow${currentItem["id"]}`).classList.remove("turnArrow");
+                }
             }
             setCurrentItem(currChosenObject);
         } else {
-            document.getElementById(`arrow${currentItem["id"]}`).classList.remove("turnArrow");
-            document.getElementById(`arrow${currentItem["id"]}`).classList.add('turnDownArrow');
+            if (currentItem["list"].length !== 0) {
+                document.getElementById(`arrow${currentItem["id"]}`).classList.remove("turnArrow");
+                document.getElementById(`arrow${currentItem["id"]}`).classList.add('turnDownArrow');
+            }
             setCurrentItem("");
         }
     }
@@ -46,8 +49,10 @@ const MenuBar = (props) => {
 
             if (navbarMenu[i]["item"] === currentItem["item"]) {
                 setChosenItem(true);
-                document.getElementById(`arrow${currentItem["id"]}`).classList.add("turnArrow");
-                document.getElementById(`arrow${currentItem["id"]}`).classList.remove('turnDownArrow');
+                if (navbarMenu[i]["list"].length !== 0) {
+                    document.getElementById(`arrow${currentItem["id"]}`).classList.add("turnArrow");
+                    document.getElementById(`arrow${currentItem["id"]}`).classList.remove('turnDownArrow');
+                }
                 break;
             } else {
                 setChosenItem(false);

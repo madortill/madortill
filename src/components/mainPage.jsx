@@ -15,13 +15,11 @@ const MainPage = () => {
     }
 
     return (
-        <div className='mainContainer'>
-            <section id="section1">
-                <div className='showUs' style={{backgroundImage: `URL(${temporaryPic})`}} >
-                    <img src={arrow} alt="arrow" className='downArrow down' onClick={scrollingDown} />
-                </div>
+        <div>
+            <section id="section1" className='showUs' style={{backgroundImage: `URL(${temporaryPic})`}} >
+                <img src={arrow} alt="arrow" className='downArrow down' onClick={scrollingDown} />
             </section>
-            <section style={{ height: "50vh"}} id="section2" >
+            <section id="section2" className='section2'>
                 <div className='explainMador' ref={paragraphRef}>
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.

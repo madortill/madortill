@@ -3,6 +3,7 @@
     position: fixed;
     right: -20vw;
     height: 100%;
+    z-index: -1;
     width: 20%;
     flex-direction: column;
     align-items: flex-start;
@@ -12,7 +13,7 @@
 }
 
 .mainNav {
-    padding: 2vh 1vw;
+    padding: 8vh 1vw;
 }
 
 .navItems {
@@ -41,14 +42,6 @@
     animation: OpenNavAni 0.7s ease-out forwards;
 }
 
-@keyframes OpenNavAni {
-    from {
-        right: -20vw;
-    }
-    to {
-        right: 0vw;
-    }
-}
 
 .closeNav {
     animation: CloseNavAni 0.7s ease-out forwards;
@@ -62,6 +55,14 @@
     animation: turnDownArrowAni 0.6s ease-out forwards;
 }
 
+@keyframes OpenNavAni {
+    from {
+        right: -20vw;
+    }
+    to {
+        right: 0vw;
+    }
+}
 
 @keyframes CloseNavAni {
     0% {

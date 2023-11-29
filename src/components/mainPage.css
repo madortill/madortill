@@ -1,13 +1,11 @@
-.showUs {
+/* .showUs {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
     width: 100vw;
     height: 100vh;
-    position: static;
     background-position: center;
-    float: right;
-}
+} */
 
 /* .explainMador {
     position: relative;
@@ -21,26 +19,22 @@
     font-size: 1.5rem;
 } */
 
-/* .mainContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0;
-    position: static;
-} */
-
-.explainMador {
+/* .explainMador {
   width: 40vw;
+  padding: 5vh;
+  border-radius: 5vh;
   direction: rtl;
   text-align: center;
   background-color: black;
   color: white;
-  position: absolute;
-  top: 120vh;
-}
+  position: relative;
+  top: 15vh;
+  left: 50%;
+    transform: translate(-50%, -50%);
+} */
 
 
-.downArrow {
+/* .downArrow {
     position: absolute;
     bottom: 2vh;
     left: 50%;
@@ -49,20 +43,68 @@
     z-index: 2;
     min-width: 3vw;
     cursor: pointer;
-}
+} */
 
 .down {
     animation: jumpInfinite 1.25s infinite;
   }
 
 @keyframes jumpInfinite {
-    0% {
-      margin-bottom: 0;
-    }
-    50% {
-      margin-bottom: 0.75vh;
-    }
-    100% {
-      margin-bottom: 0;
-    }
+  0% {
+    margin-bottom: 0;
   }
+
+  50% {
+    margin-bottom: 0.75vh;
+  }
+
+  100% {
+    margin-bottom: 0;
+  }
+}
+
+
+.showUs {
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  background-position: center;
+  display: block;
+}
+
+.menuContainer {
+  position: fixed;
+  height: 3vh;
+}
+
+.downArrow {
+  position: absolute;
+  bottom: 2vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3vw;
+  z-index: 2;
+  min-width: 3vw;
+  cursor: pointer;
+}
+
+.explainMador {
+  width: 40vw;
+  height: 30vh;
+  padding: 6vh;
+  border-radius: 5vh;
+  direction: rtl;
+  text-align: center;
+  background-color: black;
+  color: white;
+  position: relative;
+  top: 40vh;
+  left: 50vh;
+  transform: translate(-50%, -50%);
+}
+
+section {
+  height: 100vh;
+}

@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import temporaryPic from '../assets/newYorkPic.svg'
 import arrow from '../assets/downArrow.svg'
 import './mainPage.css'
+// import ScrollAnimation from 'react-animate-on-scroll'
 
 const MainPage = () => {
 
@@ -20,9 +21,12 @@ const MainPage = () => {
                 <img src={arrow} alt="arrow" className='downArrow down' onClick={scrollingDown} />
             </section>
             <section id="section2" className='section2'>
-                <div className='videoMador'>
-                    nkt nkkrjtgkjstnbuyntiorb uy otiyoi tvtyo iriubyiont yoi pihiogjhpghjp htp ijpdgthjpdtjy hpdgt yhjpd
-                </div>
+                {/* <ScrollAnimation animateIn='fadeIn'> */}
+                    <div className='videoMador'>
+                        videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador
+                        videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador
+                    </div>
+                {/* </ScrollAnimation> */}
                 <div className='explainMador' ref={paragraphRef}>
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.

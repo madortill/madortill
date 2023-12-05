@@ -1,12 +1,25 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import temporaryPic from '../assets/newYorkPic.svg'
 import arrow from '../assets/downArrow.svg'
 import './mainPage.css'
-// import ScrollAnimation from 'react-animate-on-scroll'
 
 const MainPage = () => {
-
     const paragraphRef = useRef(null);
+    const [hovered, setHovered] = useState(false);
+
+    const toggleHover = (event) => {
+
+        if (event.currentTarget.classList.contains("shrink")) {
+            event.currentTarget.classList.remove("shrink");
+        }
+
+        event.currentTarget.classList.add("grow");
+        setHovered(!hovered);
+    }
+
+    const leaveHover = (event) => {
+        event.currentTarget.classList.add("shrink");
+    }
 
     function scrollingDown () {
         paragraphRef.current.scrollIntoView({
@@ -21,13 +34,11 @@ const MainPage = () => {
                 <img src={arrow} alt="arrow" className='downArrow down' onClick={scrollingDown} />
             </section>
             <section id="section2" className='section2'>
-                {/* <ScrollAnimation animateIn='fadeIn'> */}
-                    <div className='videoMador'>
-                        videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador
-                        videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador
-                    </div>
-                {/* </ScrollAnimation> */}
-                <div className='explainMador' ref={paragraphRef}>
+                <div className={'videoMador'} onMouseEnter={toggleHover} onMouseLeave={leaveHover}>
+                    videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador
+                    videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador
+                </div>
+                <div className='explainMador' ref={paragraphRef} onMouseEnter={toggleHover} onMouseLeave={leaveHover}>
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.

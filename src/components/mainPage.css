@@ -33,7 +33,6 @@
   direction: rtl;
   text-align: center;
   background-color: rgba(225, 240, 255, 0.78);
-  /* color: white; */
   font-size: 1.5rem;
   line-height: 3vh;
 }
@@ -51,7 +50,7 @@
 }
 
 section {
-  
+
   height: 100vh;
 }
 
@@ -63,8 +62,16 @@ section {
 }
 
 .down {
-    animation: jumpInfinite 1.25s infinite;
-  }
+  animation: jumpInfinite 1.25s infinite;
+}
+
+.grow {
+  animation: growBiggerAni 1s forwards;
+}
+
+.shrink {
+  animation: shrinkAni 1s forwards;
+}
 
 @keyframes jumpInfinite {
   0% {
@@ -76,6 +83,49 @@ section {
 
   100% {
     margin-bottom: 0;
+  }
+}
+
+@-webkit-keyframes jumpInfinite {
+  0% {
+    margin-bottom: 0;
+  }
+  50% {
+    margin-bottom: 0.75vh;
+  }
+
+  100% {
+    margin-bottom: 0;
+  }
+}
+
+@keyframes growBiggerAni {
+  100% {
+    transform: scale(1.03);
+  }
+}
+
+@-webkit-keyframes growBiggerAni {
+  100% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes shrinkAni {
+  0% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes shrinkAni {
+  0% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Search from "../assets/search.svg"
 import logoMador from '../assets/logoMador.svg'
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [onMenu, setOnMenu] = useState(false);
     const [isActive, toggleActive] = useState(true);
     const [firstTime, setFirstTime] = useState(false);
@@ -26,7 +26,7 @@ const Navbar = () => {
                     <span className="line"></span>
                 </div>
             </div>
-            {firstTime && <MenuBar onMenu={onMenu} />}
+            {firstTime && <MenuBar onMenu={onMenu} navbarMenu={props.navbarMenu} />}
         </>
     )
 }

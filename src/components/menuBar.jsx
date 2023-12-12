@@ -5,26 +5,9 @@ import Arrow from '../assets/downArrow.svg'
 
 const MenuBar = (props) => {
 
-    const navbarMenu = [
-        {
-            "item": "קצת עלינו",
-            "list": [], 
-            "id": 0
-        },
-        {
-            "item": "מאגר DIY",
-            "list": ["תעודות", "סמלי יחידות", "אייקונים"], 
-            "id": 1
-        },
-        {
-            "item": "גלריית תוצרים",
-            "list": ["לומדות", "וידיאו", "פודקאסטים", "מצגות"], 
-            "id": 2
-        }
-    ];
-
     const [currentItem, setCurrentItem] = useState("");
     const [isChosen, setChosenItem] = useState(false);
+
 
     function changeCurrentItem(event, currChosenObject) {
 
@@ -45,11 +28,11 @@ const MenuBar = (props) => {
     }
 
     useEffect(() => {
-        for (let i = 0; i < navbarMenu.length; i++) {
+        for (let i = 0; i < props.navbarMenu.length; i++) {
 
-            if (navbarMenu[i]["item"] === currentItem["item"]) {
+            if (props.navbarMenu[i]["item"] === currentItem["item"]) {
                 setChosenItem(true);
-                if (navbarMenu[i]["list"].length !== 0) {
+                if (props.navbarMenu[i]["list"].length !== 0) {
                     document.getElementById(`arrow${currentItem["id"]}`).classList.add("turnArrow");
                     document.getElementById(`arrow${currentItem["id"]}`).classList.remove('turnDownArrow');
                 }
@@ -63,7 +46,7 @@ const MenuBar = (props) => {
     return (
         <div className={props.onMenu ? 'openNav barContainer' : 'closeNav barContainer'}>
             <div className='mainNav'>
-                {navbarMenu.map((title) => (
+                {props.navbarMenu.map((title) => (
                     <div key={title.item}>
                         <div className='itemContainer' onClick={(event) => changeCurrentItem(event, title)}>
                             <div className="navItems">{title.item}</div>

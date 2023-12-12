@@ -1,0 +1,60 @@
+.optionToChoose {
+    height: 40vh;
+    width: 40vw;
+    margin-top: 1vh;
+    font-size: 2.5rem;
+    border-radius: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(225, 240, 255, 0.78);
+}
+
+.optionList {
+    display: flex;
+    width: 100vw;
+    /* height: 95vh;  */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.grow {
+    animation: growBiggerAni 1s forwards;
+  }
+  
+.shrink {
+    animation: shrinkAni 1s forwards;
+}
+
+@keyframes growBiggerAni {
+    100% {
+      transform: scale(1.03);
+    }
+  }
+  
+  @-webkit-keyframes growBiggerAni {
+    100% {
+      transform: scale(1.03);
+    }
+  }
+  
+  @keyframes shrinkAni {
+    0% {
+      transform: scale(1.03);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @-webkit-keyframes shrinkAni {
+    0% {
+      transform: scale(1.03);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  

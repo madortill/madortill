@@ -2,8 +2,9 @@ import { useRef, useState } from 'react'
 import temporaryPic from '../assets/newYorkPic.svg'
 import arrow from '../assets/downArrow.svg'
 import './mainPage.css'
+import PickingSubSubject from './pickingSubSubject'
 
-const MainPage = () => {
+const MainPage = (props) => {
     const paragraphRef = useRef(null);
     const [hovered, setHovered] = useState(false);
 
@@ -33,18 +34,21 @@ const MainPage = () => {
             <section id="section1" className='showUs' style={{backgroundImage: `URL(${temporaryPic})`}} >
                 <img src={arrow} alt="arrow" className='downArrow down' onClick={scrollingDown} />
             </section>
-            <section id="section2" className='section2'>
+            <section ref={paragraphRef} id="section2" className='section2'>
                 <div className={'videoMador'} onMouseEnter={toggleHover} onMouseLeave={leaveHover}>
                     videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador
                     videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador
                 </div>
-                <div className='explainMador' ref={paragraphRef} onMouseEnter={toggleHover} onMouseLeave={leaveHover}>
+                <div className='explainMador'  onMouseEnter={toggleHover} onMouseLeave={leaveHover}>
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                 </div>
+            </section>
+            <section id="section3" className='section3'>
+                <PickingSubSubject navbarMenu={props.navbarMenu} />
             </section>
         </div>
     )

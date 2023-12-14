@@ -1,7 +1,7 @@
 .optionToChoose {
-    height: 40vh;
-    width: 40vw;
-    margin-top: 1vh;
+    height: 45vh;
+    width: 42vw;
+    margin: 1vh 0vw;
     font-size: 2.5rem;
     border-radius: 5vh;
     display: flex;
@@ -15,8 +15,9 @@
     width: 100vw;
     /* height: 95vh;  */
     flex-wrap: wrap;
+    margin-bottom: 3vh;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .grow {

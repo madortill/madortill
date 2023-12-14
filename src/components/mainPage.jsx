@@ -1,26 +1,12 @@
 import { useRef, useState } from 'react'
 import temporaryPic from '../assets/newYorkPic.svg'
 import arrow from '../assets/downArrow.svg'
+import videoMador from '../assets/videoMador.mp4'
 import './mainPage.css'
 import PickingSubSubject from './pickingSubSubject'
 
 const MainPage = (props) => {
     const paragraphRef = useRef(null);
-    const [hovered, setHovered] = useState(false);
-
-    const toggleHover = (event) => {
-
-        if (event.currentTarget.classList.contains("shrink")) {
-            event.currentTarget.classList.remove("shrink");
-        }
-
-        event.currentTarget.classList.add("grow");
-        setHovered(!hovered);
-    }
-
-    const leaveHover = (event) => {
-        event.currentTarget.classList.add("shrink");
-    }
 
     function scrollingDown () {
         paragraphRef.current.scrollIntoView({
@@ -35,11 +21,10 @@ const MainPage = (props) => {
                 <img src={arrow} alt="arrow" className='downArrow down' onClick={scrollingDown} />
             </section>
             <section ref={paragraphRef} id="section2" className='section2'>
-                <div className={'videoMador'} onMouseEnter={toggleHover} onMouseLeave={leaveHover}>
-                    videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador
-                    videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador videoMador
+                <div className='videoMador'>
+                    <video src={videoMador} className='video' type="video/mp4" controls="controls" autoplay="true" />
                 </div>
-                <div className='explainMador'  onMouseEnter={toggleHover} onMouseLeave={leaveHover}>
+                <div className='explainMador'>
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.

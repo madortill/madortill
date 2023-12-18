@@ -4,8 +4,6 @@ import './pickingSubSubject.css'
 const PickingSubSubject = (props) => {
     const [hovered, setHovered] = useState(false);
     const subSubjectGallery = props.navbarMenu[1];
-
-    console.log(subSubjectGallery)
     
     const toggleHover = (event) => {
         

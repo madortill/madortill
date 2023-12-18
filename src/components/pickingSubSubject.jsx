@@ -3,7 +3,9 @@ import './pickingSubSubject.css'
 
 const PickingSubSubject = (props) => {
     const [hovered, setHovered] = useState(false);
+    const subSubjectGallery = props.navbarMenu[1];
 
+    console.log(subSubjectGallery)
     
     const toggleHover = (event) => {
         
@@ -19,17 +21,13 @@ const PickingSubSubject = (props) => {
         event.currentTarget.classList.add("shrink");
     }
     
-    const subSubjectList = props.navbarMenu.map((option) => 
-        <div key={option.id} className='optionList' >
-            {option.list.map((list) => 
-                <div className="optionToChoose" key={list} onMouseEnter={toggleHover} onMouseLeave={leaveHover}>{list}</div>
-            )}
-        </div>
+    const subSubjectList = subSubjectGallery.list.map((option) => 
+        <div className="optionToChoose" key={option} onMouseEnter={toggleHover} onMouseLeave={leaveHover}>{option}</div>
     )
     return (
-        <>
+        <div className='optionList' >
             {subSubjectList}
-        </>
+        </div>
     )
 }
 

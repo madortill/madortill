@@ -22,7 +22,7 @@ const MainPage = (props) => {
             </section>
             <section ref={paragraphRef} id="section2" className='section2'>
                 <div className='videoMador'>
-                    <video src={videoMador} className='video' type="video/mp4" controls="controls" autoplay="true" />
+                    <video src={videoMador} className='video' type="video/mp4" controls="controls" autoPlay={true} />
                 </div>
                 <div className='explainMador'>
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.

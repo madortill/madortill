@@ -5,6 +5,8 @@ import MainPage from './components/mainPage'
 
 function App() {
 
+    const [deviceType, setDeviceType] = useState("desktop");
+
     const navbarMenu = [
       {
           "item": "קצת עלינו",
@@ -17,9 +19,9 @@ function App() {
         "id": 1
       },
       {
-          "item": "מאגר DIY",
-          "list": ["תעודות", "סמלי יחידות", "אייקונים"], 
-          "id": 2
+        "item": "מאגר DIY",
+        "list": ["תעודות", "סמלי יחידות", "אייקונים"], 
+        "id": 2
       }
     ];
 
@@ -29,7 +31,7 @@ function App() {
         <NavBar navbarMenu={navbarMenu} />
       </div>
       <div className='currentShownPage'>
-        <MainPage navbarMenu={navbarMenu} />
+        <MainPage navbarMenu={navbarMenu} deviceType={deviceType} />
       </div>
     </div>
   )

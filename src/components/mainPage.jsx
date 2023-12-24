@@ -11,9 +11,8 @@ import "react-multi-carousel/lib/styles.css";
 const MainPage = (props) => {
     const paragraphRef = useRef(null);
 
-
     const allTypesOfDIY = props.navbarMenu[2]["list"].map((card) => 
-        <div className="cardForDIY" key={card}><img src={NotebookIcon} className='iconForCard'/><div style={{ paddingRight: "0.5vw"}}>{card}</div></div>
+        <div className="cardForDIY" key={card}><img src={NotebookIcon} className='iconForCard'/><div style={{ paddingRight: "0.5vw", fontSize: "2rem"}}>{card}</div></div>
     );   
 
     function scrollingDown () {

@@ -1,10 +1,3 @@
-.section2 {
-  /* display: flex;
-  align-items: center;
-  justify-content: space-around;
-  direction: rtl; */
-}
-
 section {
   height: 100vh;
 }
@@ -36,38 +29,38 @@ section {
   cursor: pointer;
 }
 
-.explainMador, .videoMador {
-  height: auto;
-  padding: 6vh;
+.explainMador, .video {
+  padding: 4vh;
   direction: rtl;
   text-align: center;
   font-size: 1.5rem;
   line-height: 3vh;
-  border-radius: 1vh;
-  position: relative;
+  border-radius: 28px;
+  width: 40vw;
+}
+
+.section2 {
+  padding-left: 2vw;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
 }
 
 .explainMador {
-  width: 30vw;
-  background-color: rgba(225, 240, 255, 0.78);
-  bottom: 10vh;
-  left: 4vw;
-}
-
-.videoMador {
-  width: 50vw;
-  background-color: rgba(190, 206, 223, 0.78);
-  top: 8vh;
-  left: 39vw;
+  height: 22vh;
+  background-color: #F3F3F3;
 }
 
 .video {
-  width: 50vw;
+  height: 40vh;
+  background-color: rgba(191, 208, 175, 0.6);
+  /* height: 45vh; */
+  /* background-color: rgba(0, 71, 50, 0.8); */
 }
 
 .cardForDIY {
-  width: 20vw;
-  height: 30vh;
+  width: 28vw;
+  height: 40vh;
   font-size: 1.3rem;
   direction: rtl;
   display: flex;
@@ -79,9 +72,8 @@ section {
 
 .carouselContainer {
   margin: auto;
+  width: 60%;
   padding: 10vh 0vh;
-  width: 50%;
-  width: 45vw;
   height: 40vh;
 }
 
@@ -95,3 +87,14 @@ section {
   animation: jumpInfinite 1.25s infinite;
 }
 
+@keyframes jumpInfinite {
+  0% {
+    bottom: 5vh;
+  }
+  50% {
+    bottom: 4.25vh;
+  }
+  100% {
+    bottom: 5vh;
+  }
+}

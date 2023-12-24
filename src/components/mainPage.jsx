@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import temporaryPic from '../assets/newYorkPic.svg'
 import arrow from '../assets/downArrow.svg'
 import videoMador from '../assets/videoMador.mp4'
-import IconIcon from '../assets/iconIcon.jpg'
+import NotebookIcon from '../assets/notebookIcon.jpg'
 import './mainPage.css'
 import PickingSubSubject from './pickingSubSubject'
 import Carousel from "react-multi-carousel";
@@ -13,7 +13,7 @@ const MainPage = (props) => {
 
 
     const allTypesOfDIY = props.navbarMenu[2]["list"].map((card) => 
-        <div className="cardForDIY" key={card}><img src={IconIcon} className='iconForCard'/><div style={{ paddingRight: "0.5vw"}}>{card}</div></div>
+        <div className="cardForDIY" key={card}><img src={NotebookIcon} className='iconForCard'/><div style={{ paddingRight: "0.5vw"}}>{card}</div></div>
     );   
 
     function scrollingDown () {
@@ -28,7 +28,6 @@ const MainPage = (props) => {
             <section id="section1" className='showUs' style={{backgroundImage: `URL(${temporaryPic})`}} >
                 <img src={arrow} alt="arrow" className='downArrow down' onClick={scrollingDown} />
             </section>
-
             <section ref={paragraphRef} id="section2" className='section2'>
                 <div className='videoMador'>
                     <video src={videoMador} className='video' type="video/mp4" controls="controls" autoPlay={true} />

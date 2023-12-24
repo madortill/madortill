@@ -90,7 +90,7 @@ const MainPage = (props) => {
                     rewindWithAnimation={false}
                     rtl={false}
                     shouldResetAutoplay
-                    showDots={false}
+                    showDots
                     sliderClass=""
                     slidesToSlide={1}
                     swipeable

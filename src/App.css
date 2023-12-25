@@ -19,7 +19,7 @@ html, body {
   height: 3vh;
 }
 
-.currentShownPage {
+.currentPage {
   padding-top: 3vh;
   width: 100%;
   height: 100%;

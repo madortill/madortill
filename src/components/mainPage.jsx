@@ -44,7 +44,7 @@ const MainPage = (props) => {
             </section>
 
             <section id="section3" className='section3'>
-                <PickingSubSubject navbarMenu={props.navbarMenu} />
+                <PickingSubSubject navbarMenu={props.navbarMenu} handleChange={props.handleChange} />
                 <Carousel
                     additionalTransfrom={0}
                     arrows

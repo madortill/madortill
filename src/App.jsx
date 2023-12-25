@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import NavBar from './components/navBar'
 import './App.css'
+import NavBar from './components/navBar'
 import MainPage from './components/mainPage'
+import Lomdot from './components/lomdot'
 
 function App() {
-
     const [deviceType, setDeviceType] = useState("desktop");
+    const [currentShownPage, setCurrentPage] = useState();
 
     const navbarMenu = [
       {
@@ -25,13 +26,19 @@ function App() {
       }
     ];
 
+    function handleChange (newPage) {
+      console.log(newPage);
+      // setCurrentPage(newPage);
+    }
+
   return (
     <div className='containerEverything'>
       <div className="NavStyle">
-        <NavBar navbarMenu={navbarMenu} />
+        <NavBar navbarMenu={navbarMenu} handleChange={handleChange} />
       </div>
-      <div className='currentShownPage'>
-        <MainPage navbarMenu={navbarMenu} deviceType={deviceType} />
+      <div className='currentPage'>
+        <MainPage navbarMenu={navbarMenu} deviceType={deviceType} handleChange={handleChange} />
+        {currentShownPage === "לומדות" && <Lomdot />}
       </div>
     </div>
   )

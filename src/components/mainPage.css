@@ -41,6 +41,7 @@ section {
 
 .section2 {
   /* background-image: url("src/assets/backgroundSection2.svg"); */
+  /* -webkit-transform: translate3d(0,0,0); */
   background-repeat: no-repeat;
   background-size: cover;
   padding-left: 2vw;

@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import temporaryPic from '../assets/newYorkPic.svg'
+import backgroundSection from '../assets/backgroundSection2.svg'
 import arrow from '../assets/downArrow.svg'
 import videoMador from '../assets/videoMador.mp4'
 import NotebookIcon from '../assets/notebookIcon.jpg'
@@ -27,7 +28,9 @@ const MainPage = (props) => {
             <section id="section1" className='showUs' style={{backgroundImage: `URL(${temporaryPic})`}} >
                 <img src={arrow} alt="arrow" className='downArrow down' onClick={scrollingDown} />
             </section>
-            <section ref={paragraphRef} id="section2" className='section2'>
+            <section ref={paragraphRef} id="section2" className='section2'
+            //  style={{ backgroundImage: `URL(${backgroundSection})`}}
+             >
                 <div className='videoMador'>
                     <video src={videoMador} className='video' type="video/mp4" controls="controls" autoPlay={true} />
                 </div>

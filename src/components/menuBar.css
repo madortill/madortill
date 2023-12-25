@@ -40,7 +40,6 @@
     animation: OpenNavAni 0.7s ease-out forwards;
 }
 
-
 .closeNav {
     animation: CloseNavAni 0.7s ease-out forwards;
 }

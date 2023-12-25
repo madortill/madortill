@@ -26,7 +26,7 @@ const Navbar = (props) => {
                     <span className="line"></span>
                 </div>
             </div>
-            {firstTime && <MenuBar onMenu={onMenu} navbarMenu={props.navbarMenu} />}
+            {firstTime && <MenuBar onMenu={onMenu} navbarMenu={props.navbarMenu} openMenu={openMenu} changePage={props.changePage} makeScrollToAboutUs={props.makeScrollToAboutUs} />}
         </>
     )
 }

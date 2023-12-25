@@ -14,7 +14,11 @@ const MainPage = (props) => {
 
     const allTypesOfDIY = props.navbarMenu[2]["list"].map((card) => 
         <div className="cardForDIY" key={card}><img src={NotebookIcon} className='iconForCard'/><div style={{ paddingRight: "0.5vw", fontSize: "2rem"}}>{card}</div></div>
-    );   
+    );
+
+    if (props.aboutUsPage === true) {
+        scrollingDown();
+    }
 
     function scrollingDown () {
         paragraphRef.current.scrollIntoView({
@@ -44,7 +48,7 @@ const MainPage = (props) => {
             </section>
 
             <section id="section3" className='section3'>
-                <PickingSubSubject navbarMenu={props.navbarMenu} handleChange={props.handleChange} />
+                <PickingSubSubject navbarMenu={props.navbarMenu} changePage={props.changePage} />
                 <Carousel
                     additionalTransfrom={0}
                     arrows

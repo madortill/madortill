@@ -38,7 +38,7 @@ const PickingSubSubject = (props) => {
     
     const subSubjectList = subSubjectGallery.list.map((option, index) => 
         <div key={index} className={index%2 === 0 ? 'allOption' : 'right allOption'}>
-            <div className="optionToChoose" onMouseEnter={toggleHover} onMouseLeave={leaveHover} onClick={props.handleChange(option)}>{option}</div>
+            <div className="optionToChoose" onMouseEnter={toggleHover} onMouseLeave={leaveHover} onClick={(event) => props.changePage(event.currentTarget.innerText)}>{option}</div>
                 {explainSubject.map((sub) => {
                     if (option === sub.title) {
                         return (

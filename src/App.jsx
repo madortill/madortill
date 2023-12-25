@@ -7,12 +7,13 @@ import Lomdot from './components/lomdot'
 function App() {
     const [deviceType, setDeviceType] = useState("desktop");
     const [currentShownPage, setCurrentPage] = useState();
+    const [aboutUsPage, setAboutUs] = useState(false);
 
     const navbarMenu = [
       {
-          "item": "קצת עלינו",
-          "list": [], 
-          "id": 0
+        "item": "קצת עלינו",
+        "list": [], 
+        "id": 0
       },
       {
         "item": "גלריית תוצרים",
@@ -26,18 +27,21 @@ function App() {
       }
     ];
 
-    function handleChange (newPage) {
-      console.log(newPage);
-      // setCurrentPage(newPage);
+    function changePage (newPage) {
+      setCurrentPage(newPage);
+    }
+
+    function makeScrollToAboutUs () {
+      setAboutUs(true);
     }
 
   return (
     <div className='containerEverything'>
       <div className="NavStyle">
-        <NavBar navbarMenu={navbarMenu} handleChange={handleChange} />
+        <NavBar navbarMenu={navbarMenu} changePage={changePage} makeScrollToAboutUs={makeScrollToAboutUs} />
       </div>
       <div className='currentPage'>
-        <MainPage navbarMenu={navbarMenu} deviceType={deviceType} handleChange={handleChange} />
+        <MainPage navbarMenu={navbarMenu} deviceType={deviceType} changePage={changePage} aboutUsPage={aboutUsPage} />
         {currentShownPage === "לומדות" && <Lomdot />}
       </div>
     </div>

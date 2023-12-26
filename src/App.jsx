@@ -6,7 +6,7 @@ import Lomdot from './components/lomdot'
 
 function App() {
     const [deviceType, setDeviceType] = useState("desktop");
-    const [currentShownPage, setCurrentPage] = useState();
+    const [currentShownPage, setCurrentPage] = useState("main");
     const [aboutUsPage, setAboutUs] = useState(false);
 
     const navbarMenu = [
@@ -28,6 +28,7 @@ function App() {
     ];
 
     function changePage (newPage) {
+      console.log(newPage);
       setCurrentPage(newPage);
     }
 
@@ -41,7 +42,7 @@ function App() {
         <NavBar navbarMenu={navbarMenu} changePage={changePage} makeScrollToAboutUs={makeScrollToAboutUs} />
       </div>
       <div className='currentPage'>
-        <MainPage navbarMenu={navbarMenu} deviceType={deviceType} changePage={changePage} aboutUsPage={aboutUsPage} />
+        {currentShownPage === "main" && <MainPage navbarMenu={navbarMenu} deviceType={deviceType} changePage={changePage} aboutUsPage={aboutUsPage} />}
         {currentShownPage === "לומדות" && <Lomdot />}
       </div>
     </div>

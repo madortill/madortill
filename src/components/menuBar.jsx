@@ -8,7 +8,6 @@ const MenuBar = (props) => {
     const [isChosen, setChosenItem] = useState(false);
 
     function changeCurrentItem(event, currChosenObject) {
-
         if (event.currentTarget.innerText !== currentItem["item"]) {
             if (currentItem["item"] !== undefined) {
                 if (currentItem["list"].length !== 0) {
@@ -31,9 +30,11 @@ const MenuBar = (props) => {
             if (props.navbarMenu[i]["item"] === currentItem["item"]) {
                 setChosenItem(true);
                 if (currentItem["item"] === "קצת עלינו") {
-                    props.changePage('main');
-                    props.makeScrollToAboutUs()
+                    props.changePage("main");
                     props.openMenu();
+                    const timer = setTimeout(() => {
+                        props.makeScrollToAboutUs();
+                    }, 250);
                 }
                 if (props.navbarMenu[i]["list"].length !== 0) {
                     document.getElementById(`arrow${currentItem["id"]}`).classList.add("turnArrow");

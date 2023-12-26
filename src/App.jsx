@@ -3,6 +3,11 @@ import './App.css'
 import NavBar from './components/navBar'
 import MainPage from './components/mainPage'
 import Lomdot from './components/lomdot'
+import Video from './components/video'
+import Certificate from './components/certificate.jsx'
+import Pictures from './components/pictures.jsx'
+import Presentation from './components/presentation.jsx'
+
 
 function App() {
     const [deviceType, setDeviceType] = useState("desktop");
@@ -44,6 +49,10 @@ function App() {
       <div className='currentPage'>
         {currentShownPage === "main" && <MainPage navbarMenu={navbarMenu} deviceType={deviceType} changePage={changePage} aboutUsPage={aboutUsPage} />}
         {currentShownPage === "לומדות" && <Lomdot />}
+        {currentShownPage === "סרטים" && <Video />}
+        {currentShownPage === "תעודות" && <Certificate />}
+        {currentShownPage === "תמונות" && <Pictures />}
+        {currentShownPage === "מצגות" && <Presentation />}
       </div>
     </div>
   )

@@ -6,6 +6,7 @@ import Arrow from '../assets/downArrow.svg'
 const MenuBar = (props) => {
     const [currentItem, setCurrentItem] = useState("");
     const [isChosen, setChosenItem] = useState(false);
+    // const [timer, setTimer] = useState(0);
 
     function changeCurrentItem(event, currChosenObject) {
         if (event.currentTarget.innerText !== currentItem["item"]) {
@@ -32,9 +33,14 @@ const MenuBar = (props) => {
                 if (currentItem["item"] === "קצת עלינו") {
                     props.changePage("main");
                     props.openMenu();
-                    const timer = setTimeout(() => {
-                        props.makeScrollToAboutUs();
-                    }, 250);
+
+                    // const timer = setTimeout(() => {
+                    //     props.makeScrollToAboutUs();
+                    // }, 100);
+
+                    // return () => {
+                    //     clearTimeout(timer);
+                    // }
                 }
                 if (props.navbarMenu[i]["list"].length !== 0) {
                     document.getElementById(`arrow${currentItem["id"]}`).classList.add("turnArrow");
@@ -56,7 +62,7 @@ const MenuBar = (props) => {
                             <div className="navItems">{title.item}</div>
                             {title.list.length !== 0 && <img src={Arrow} alt="arrow" className='arrow' id={`arrow${title.id}`} />}
                         </div>
-                        {(isChosen && currentItem["item"] === title.item) ? <MenuDropDown currentItem={currentItem} /> : <></>}
+                        {(isChosen && currentItem["item"] === title.item) ? <MenuDropDown currentItem={currentItem} changePage={props.changePage} /> : <></>}
                     </div>
                 ))}
             </div>

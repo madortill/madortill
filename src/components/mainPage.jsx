@@ -16,16 +16,16 @@ const MainPage = (props) => {
         <div className="cardForDIY" key={card}><img src={NotebookIcon} className='iconForCard'/><div style={{ paddingRight: "0.5vw", fontSize: "2rem"}}>{card}</div></div>
     );
 
-    if (props.aboutUsPage === true) {
-        scrollingDown();
-    }
-
+    
     function scrollingDown () {
         paragraphRef.current.scrollIntoView({
             behavior: "smooth",
             block: "start"
         })
     };
+    if (props.aboutUsPage === true) {
+        scrollingDown();
+    }
 
     return (
         <div>

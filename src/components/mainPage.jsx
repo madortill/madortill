@@ -22,11 +22,11 @@ const MainPage = (props) => {
         //     behavior: "smooth",
         //     block: "start"
         // })
-        // body.scrollBy({
-        //     top: 980,
-        //     left: 0,
-        //     behavior: "smooth",
-        // });
+        window.scrollTo({
+            top: 100,
+            left: 0,
+            behavior: "smooth",
+        });
     };
     if (props.aboutUsPage === true) {
         scrollingDown();

@@ -1,14 +1,17 @@
 import './menuDropDown.css'
+import { useNavigate } from 'react-router-dom'
 
 const MenuDropDown = (props) => {
     const dropDownList = [];
+    let navigate = useNavigate();
 
     for (let i = 0; i < props.currentItem["list"].length; i++) {
         dropDownList.push(<div key={props.currentItem["list"][i]} className='menuItem' onClick={choosingSubSubject}>{props.currentItem["list"][i]}</div>)
     }
 
     function choosingSubSubject (event) {
-        props.changePage(event.currentTarget.innerText);
+        navigate(`${event.currentTarget.innerText}`);
+        // props.changePage(event.currentTarget.innerText);
     }
 
     return (

@@ -31,7 +31,7 @@ const MenuBar = (props) => {
             if (props.navbarMenu[i]["item"] === currentItem["item"]) {
                 setChosenItem(true);
                 if (currentItem["item"] === "קצת עלינו") {
-                    props.changePage("main");
+                    // props.changePage("main");
                     props.openMenu();
 
                     // const timer = setTimeout(() => {

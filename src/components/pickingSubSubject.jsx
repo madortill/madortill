@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './pickingSubSubject.css'
 
 const PickingSubSubject = (props) => {
+    let navigate = useNavigate();
     const [hovered, setHovered] = useState(false);
     const subSubjectGallery = props.navbarMenu[1];
+
     const explainSubject = [
         {
             title: 'לומדות',
@@ -27,7 +30,6 @@ const PickingSubSubject = (props) => {
         if (event.currentTarget.classList.contains("shrink")) {
             event.currentTarget.classList.remove("shrink");
         }
-        
         event.currentTarget.classList.add("grow");
         setHovered(!hovered);
     }
@@ -35,10 +37,14 @@ const PickingSubSubject = (props) => {
     const leaveHover = (event) => {
         event.currentTarget.classList.add("shrink");
     }
+
+    function choosingSubSubject (event) {
+        navigate(`${event.currentTarget.innerText}`);
+    }
     
     const subSubjectList = subSubjectGallery.list.map((option, index) => 
         <div key={index} className={index%2 === 0 ? 'allOption' : 'right allOption'}>
-            <div className="optionToChoose" onMouseEnter={toggleHover} onMouseLeave={leaveHover} onClick={(event) => props.changePage(event.currentTarget.innerText)}>{option}</div>
+            <div className="optionToChoose" onMouseEnter={toggleHover} onMouseLeave={leaveHover} onClick={(event) =>navigate(`${event.currentTarget.innerText}`)}>{option}</div>
                 {explainSubject.map((sub) => {
                     if (option === sub.title) {
                         return (

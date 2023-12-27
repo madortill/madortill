@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { Outlet, Link } from "react-router-dom";
 import './App.css'
 import NavBar from './components/navBar'
 import MainPage from './components/mainPage'
@@ -42,20 +44,32 @@ function App() {
     }
 
   return (
-    <div className='containerEverything'>
-      <div className="NavStyle">
-        <NavBar navbarMenu={navbarMenu} changePage={changePage} makeScrollToAboutUs={makeScrollToAboutUs} />
+    <BrowserRouter>
+      <div className='containerEverything'>
+        {/* <div className="NavStyle">
+          <NavBar navbarMenu={navbarMenu} changePage={changePage} makeScrollToAboutUs={makeScrollToAboutUs} />
+        </div> */}
+        <div className='currentPage'>
+          <Routes>
+            <Route path="/" element={<NavBar navbarMenu={navbarMenu} changePage={changePage} makeScrollToAboutUs={makeScrollToAboutUs} />}>
+              <Route path="main" element={<MainPage navbarMenu={navbarMenu} deviceType={deviceType} aboutUsPage={aboutUsPage} />} />
+              <Route path="לומדות" element={<Lomdot />} />
+              <Route path="סרטים" element={<Video />} />
+              <Route path="תמונות" element={<Pictures />} />
+              <Route path="מצגות" element={<Presentation />} />
+            </Route>
+          </Routes>
+          {/* {currentShownPage === "main" && <MainPage navbarMenu={navbarMenu} deviceType={deviceType} changePage={changePage} aboutUsPage={aboutUsPage} />} */}
+          {/* {currentShownPage === "לומדות" && <Lomdot />}
+          {currentShownPage === "סרטים" && <Video />} 
+          {currentShownPage === "תעודות" && <Certificate />}
+          {currentShownPage === "תמונות" && <Pictures />}
+          {currentShownPage === "מצגות" && <Presentation />} */}
+        </div>
       </div>
-      <div className='currentPage'>
-        {currentShownPage === "main" && <MainPage navbarMenu={navbarMenu} deviceType={deviceType} changePage={changePage} aboutUsPage={aboutUsPage} />}
-        {currentShownPage === "לומדות" && <Lomdot />}
-        {currentShownPage === "סרטים" && <Video />}
-        {currentShownPage === "תעודות" && <Certificate />}
-        {currentShownPage === "תמונות" && <Pictures />}
-        {currentShownPage === "מצגות" && <Presentation />}
-      </div>
-    </div>
+    </BrowserRouter>
   )
 }
+// navigate("/lomdot");
 
 export default App

@@ -4,14 +4,14 @@
     position: fixed;
     right: -20vw;
     height: 100%;
-    z-index: -1;
+    z-index: 1;
     width: 20%;
     background-color: black;
     direction: rtl;
 }
 
 .mainNav {
-    padding: 8vh 1vw;
+    padding: 5vh 1vw;
 }
 
 .navItems {

@@ -10,7 +10,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const MainPage = (props) => {
-    const paragraphRef = useRef(null);
+    const paragraphRef = useRef();
 
     const allTypesOfDIY = props.navbarMenu[2]["list"].map((card) => 
         <div className="cardForDIY" key={card}><img src={NotebookIcon} className='iconForCard'/><div style={{ paddingRight: "0.5vw", fontSize: "2rem"}}>{card}</div></div>
@@ -18,10 +18,15 @@ const MainPage = (props) => {
 
     
     function scrollingDown () {
-        paragraphRef.current.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        })
+        // paragraphRef.current.scrollIntoView({
+        //     behavior: "smooth",
+        //     block: "start"
+        // })
+        // body.scrollBy({
+        //     top: 980,
+        //     left: 0,
+        //     behavior: "smooth",
+        // });
     };
     if (props.aboutUsPage === true) {
         scrollingDown();

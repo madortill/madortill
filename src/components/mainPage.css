@@ -15,7 +15,9 @@ section {
 
 .menuContainer {
   position: fixed;
+  top: 0vh;
   height: 3vh;
+  width: 100%;
 }
 
 .downArrow {

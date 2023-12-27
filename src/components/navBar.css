@@ -1,16 +1,14 @@
 .searchIcon {
-    width: 1.5vw;
-    min-width: 1.5vw;
-    cursor: pointer;
-    padding-left: 1vw;
-    cursor: pointer;
+  width: 1.5vw;
+  min-width: 1.5vw;
+  padding-left: 1vw;
+  cursor: pointer;
 }
 
 .madortillName {
-    pointer-events: none;
-    height: 2.25vh;
-    width: 7vw;
-    min-width: 5vw;
+  height: 2.25vh;
+  width: 7vw;
+  min-width: 5vw;
 }
 
 .row .three{
@@ -73,7 +71,6 @@
 }
 
 .menuIcon {
-  z-index: 4;
   padding-right: 1vw;
   width: 1.8vw;
   cursor: pointer;

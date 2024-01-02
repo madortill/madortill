@@ -11,7 +11,6 @@ const MenuDropDown = (props) => {
 
     function choosingSubSubject (event) {
         navigate(`${event.currentTarget.innerText}`);
-        // props.changePage(event.currentTarget.innerText);
     }
 
     return (

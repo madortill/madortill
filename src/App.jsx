@@ -13,7 +13,7 @@ import Presentation from './components/presentation.jsx'
 
 function App() {
     const [deviceType, setDeviceType] = useState("desktop");
-    const [currentShownPage, setCurrentPage] = useState("main");
+    // const [currentShownPage, setCurrentPage] = useState("main");
     const [aboutUsPage, setAboutUs] = useState(false);
 
     const navbarMenu = [
@@ -34,10 +34,10 @@ function App() {
       }
     ];
 
-    function changePage (newPage) {
-      console.log(newPage);
-      setCurrentPage(newPage);
-    }
+    // function changePage (newPage) {
+    //   console.log(newPage);
+    //   setCurrentPage(newPage);
+    // }
 
     function makeScrollToAboutUs () {
       setAboutUs(true);
@@ -51,7 +51,7 @@ function App() {
         </div> */}
         <div className='currentPage'>
           <Routes>
-            <Route path="/" element={<NavBar navbarMenu={navbarMenu} changePage={changePage} makeScrollToAboutUs={makeScrollToAboutUs} />}>
+            <Route path="/" element={<NavBar navbarMenu={navbarMenu} makeScrollToAboutUs={makeScrollToAboutUs} />}>
               <Route path="main" element={<MainPage navbarMenu={navbarMenu} deviceType={deviceType} aboutUsPage={aboutUsPage} />} />
               <Route path="לומדות" element={<Lomdot />} />
               <Route path="סרטים" element={<Video />} />

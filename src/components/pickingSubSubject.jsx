@@ -39,12 +39,14 @@ const PickingSubSubject = (props) => {
     }
 
     function choosingSubSubject (event) {
-        navigate(`${event.currentTarget.innerText}`);
+        // console.log(props.navbarMenu[1]["list"]);
+        // console.log(event.currentTarget.innerText);
+        navigate(`/${event.currentTarget.innerText}`);
     }
     
     const subSubjectList = subSubjectGallery.list.map((option, index) => 
         <div key={index} className={index%2 === 0 ? 'allOption' : 'right allOption'}>
-            <div className="optionToChoose" onMouseEnter={toggleHover} onMouseLeave={leaveHover} onClick={(event) =>navigate(`${event.currentTarget.innerText}`)}>{option}</div>
+            <div className="optionToChoose" onMouseEnter={toggleHover} onMouseLeave={leaveHover} onClick={choosingSubSubject}>{option}</div>
                 {explainSubject.map((sub) => {
                     if (option === sub.title) {
                         return (

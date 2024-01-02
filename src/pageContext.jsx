@@ -4,6 +4,7 @@ export const PageContext = createContext({
     currentPage: (""),
     setCurrentPage: () => {},
 });
+
 export const PageProvider = ({children}) => {
     const [currentPage, setCurrentPage] = useState("main");
     const value = {currentPage, setCurrentPage};

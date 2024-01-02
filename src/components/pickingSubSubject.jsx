@@ -39,8 +39,6 @@ const PickingSubSubject = (props) => {
     }
 
     function choosingSubSubject (event) {
-        // console.log(props.navbarMenu[1]["list"]);
-        // console.log(event.currentTarget.innerText);
         navigate(`/${event.currentTarget.innerText}`);
     }
     

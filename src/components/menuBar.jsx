@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './menuBar.css'
 import MenuDropDown from './menuDropDown'
 import Arrow from '../assets/downArrow.svg'
@@ -6,7 +7,7 @@ import Arrow from '../assets/downArrow.svg'
 const MenuBar = (props) => {
     const [currentItem, setCurrentItem] = useState("");
     const [isChosen, setChosenItem] = useState(false);
-    // const [timer, setTimer] = useState(0);
+    let navigate = useNavigate();
 
     function changeCurrentItem(event, currChosenObject) {
         if (event.currentTarget.innerText !== currentItem["item"]) {
@@ -30,17 +31,9 @@ const MenuBar = (props) => {
 
             if (props.navbarMenu[i]["item"] === currentItem["item"]) {
                 setChosenItem(true);
-                if (currentItem["item"] === "קצת עלינו") {
-                    // props.changePage("main");
+                if (currentItem["item"] === "עמוד הבית") {
                     props.openMenu();
-
-                    // const timer = setTimeout(() => {
-                    //     props.makeScrollToAboutUs();
-                    // }, 100);
-
-                    // return () => {
-                    //     clearTimeout(timer);
-                    // }
+                    navigate(`/main`);
                 }
                 if (props.navbarMenu[i]["list"].length !== 0) {
                     document.getElementById(`arrow${currentItem["id"]}`).classList.add("turnArrow");

@@ -18,16 +18,12 @@ const MainPage = (props) => {
 
     
     function scrollingDown () {
-        // paragraphRef.current.scrollIntoView({
-        //     behavior: "smooth",
-        //     block: "start"
-        // })
-        window.scrollTo({
-            top: 100,
-            left: 0,
+        paragraphRef.current.scrollIntoView({
             behavior: "smooth",
+            block: "start"
         });
-    };
+    }
+
     if (props.aboutUsPage === true) {
         scrollingDown();
     }

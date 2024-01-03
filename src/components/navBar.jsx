@@ -19,9 +19,9 @@ const Navbar = (props) => {
 
     return (
         <>
-            <div className='menuContainer' onClick={() => navigate("main")}>
+            <div className='menuContainer' >
                 <img src={Search} className="searchIcon" alt="search" />
-                <img className='madortillName' src={logoMador} alt="logo"/>
+                <img className='madortillName' src={logoMador} alt="logo" onClick={() => navigate("main")}/>
                 <div className={isActive ? "hamburger" : "hamburger is-active"} id="hamburger-1" onClick={openMenu}>
                     <span className="line"></span>
                     <span className="line"></span>

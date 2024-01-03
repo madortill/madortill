@@ -13,12 +13,11 @@ import Presentation from './components/presentation.jsx'
 
 function App() {
     const [deviceType, setDeviceType] = useState("desktop");
-    // const [currentShownPage, setCurrentPage] = useState("main");
     const [aboutUsPage, setAboutUs] = useState(false);
 
     const navbarMenu = [
       {
-        "item": "קצת עלינו",
+        "item": "עמוד הבית",
         "list": [], 
         "id": 0
       },

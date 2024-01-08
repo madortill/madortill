@@ -33,7 +33,7 @@ const MenuBar = (props) => {
                 setChosenItem(true);
                 if (currentItem["item"] === "עמוד הבית") {
                     props.openMenu();
-                    navigate(`/main`);
+                    navigate(`/`);
                 }
                 if (props.navbarMenu[i]["list"].length !== 0) {
                     document.getElementById(`arrow${currentItem["id"]}`).classList.add("turnArrow");

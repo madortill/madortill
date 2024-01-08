@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useNavigate, Outlet } from 'react-router-dom'
 import Search from "../assets/search.svg"
 import logoMador from '../assets/logoMador.svg'
+import MainPage from './mainPage'
 
 const Navbar = (props) => {
     const [onMenu, setOnMenu] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = (props) => {
         <>
             <div className='menuContainer' >
                 <img src={Search} className="searchIcon" alt="search" />
-                <img className='madortillName' src={logoMador} alt="logo" onClick={() => navigate("main")}/>
+                <img className='madortillName' src={logoMador} alt="logo" onClick={() => navigate("/")}/>
                 <div className={isActive ? "hamburger" : "hamburger is-active"} id="hamburger-1" onClick={openMenu}>
                     <span className="line"></span>
                     <span className="line"></span>

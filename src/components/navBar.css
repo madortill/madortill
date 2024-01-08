@@ -9,6 +9,7 @@
   height: 2.25vh;
   width: 7vw;
   min-width: 5vw;
+  cursor: pointer;
 }
 
 .row .three{

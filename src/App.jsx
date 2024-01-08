@@ -51,7 +51,7 @@ function App() {
         <div className='currentPage'>
           <Routes>
             <Route path="/" element={<NavBar navbarMenu={navbarMenu} makeScrollToAboutUs={makeScrollToAboutUs} />}>
-              <Route path="main" element={<MainPage navbarMenu={navbarMenu} deviceType={deviceType} aboutUsPage={aboutUsPage} />} />
+              <Route index element={<MainPage navbarMenu={navbarMenu} deviceType={deviceType} aboutUsPage={aboutUsPage} />} />
               <Route path="לומדות" element={<Lomdot />} />
               <Route path="סרטים" element={<Video />} />
               <Route path="תמונות" element={<Pictures />} />
@@ -69,6 +69,5 @@ function App() {
     </BrowserRouter>
   )
 }
-// navigate("/lomdot");
 
 export default App

@@ -22,7 +22,7 @@ const Navbar = (props) => {
         <>
             <div className='menuContainer' >
                 <img src={Search} className="searchIcon" alt="search" />
-                <img className='madortillName' src={logoMador} alt="logo" onClick={() => navigate("/")}/>
+                <img className='madortillName' src={logoMador} alt="logo" onClick={() => {navigate("/"); openMenu();}}/>
                 <div className={isActive ? "hamburger" : "hamburger is-active"} id="hamburger-1" onClick={openMenu}>
                     <span className="line"></span>
                     <span className="line"></span>

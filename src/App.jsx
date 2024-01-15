@@ -33,21 +33,12 @@ function App() {
       }
     ];
 
-    // function changePage (newPage) {
-    //   console.log(newPage);
-    //   setCurrentPage(newPage);
-    // }
-
     function makeScrollToAboutUs () {
       setAboutUs(true);
     }
 
   return (
     <BrowserRouter>
-      <div className='containerEverything'>
-        {/* <div className="NavStyle">
-          <NavBar navbarMenu={navbarMenu} changePage={changePage} makeScrollToAboutUs={makeScrollToAboutUs} />
-        </div> */}
         <div className='currentPage'>
           <Routes>
             <Route path="/" element={<NavBar navbarMenu={navbarMenu} makeScrollToAboutUs={makeScrollToAboutUs} />}>
@@ -58,14 +49,7 @@ function App() {
               <Route path="מצגות" element={<Presentation />} />
             </Route>
           </Routes>
-          {/* {currentShownPage === "main" && <MainPage navbarMenu={navbarMenu} deviceType={deviceType} changePage={changePage} aboutUsPage={aboutUsPage} />} */}
-          {/* {currentShownPage === "לומדות" && <Lomdot />}
-          {currentShownPage === "סרטים" && <Video />} 
-          {currentShownPage === "תעודות" && <Certificate />}
-          {currentShownPage === "תמונות" && <Pictures />}
-          {currentShownPage === "מצגות" && <Presentation />} */}
         </div>
-      </div>
     </BrowserRouter>
   )
 }

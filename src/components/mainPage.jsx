@@ -5,6 +5,7 @@ import arrow from '../assets/downArrow.svg'
 import videoMador from '../assets/videoMador.mp4'
 import NotebookIcon from '../assets/notebookIcon.jpg'
 import './mainPage.css'
+import Footer from './Footer.jsx'
 import PickingSubSubject from './pickingSubSubject'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -50,6 +51,8 @@ const MainPage = (props) => {
 
             <section id="section3" className='section3'>
                 <PickingSubSubject navbarMenu={props.navbarMenu} changePage={props.changePage} />
+            </section>
+            <section id="section4" className='section4'>
                 <Carousel
                     additionalTransfrom={0}
                     arrows
@@ -106,6 +109,7 @@ const MainPage = (props) => {
                     {allTypesOfDIY}
                 </Carousel>
             </section>
+            <section id="section5" className='footer'><Footer /></section>
         </div>
     )
 }

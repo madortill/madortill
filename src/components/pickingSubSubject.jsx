@@ -40,6 +40,7 @@ const PickingSubSubject = (props) => {
 
     function choosingSubSubject (event) {
         navigate(`/${event.currentTarget.innerText}`);
+
     }
     
     const subSubjectList = subSubjectGallery.list.map((option, index) => 

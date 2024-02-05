@@ -4,11 +4,10 @@ import { useState } from 'react'
 import { useNavigate, Outlet } from 'react-router-dom'
 import Search from "../assets/search.svg"
 import logoMador from '../assets/logoMador.svg'
-import MainPage from './mainPage'
 
 const Navbar = (props) => {
     const [onMenu, setOnMenu] = useState(false);
-    const [isActive, toggleActive] = useState(false);
+    const [isMenuIcon, toggleMenuIcon] = useState(false);
     const [firstTime, setFirstTime] = useState(false);
     let navigate = useNavigate();
 
@@ -18,10 +17,10 @@ const Navbar = (props) => {
         if (toggle !== undefined) {
             setFirstTime(false);
             setOnMenu(toggle);
-            toggleActive(toggle);
+            toggleMenuIcon(toggle);
         } else {
             setOnMenu(!onMenu);
-            toggleActive(!isActive);
+            toggleMenuIcon(!isMenuIcon);
         }
     }
 
@@ -30,7 +29,8 @@ const Navbar = (props) => {
             <div className='menuContainer' >
                 <img src={Search} className="searchIcon" alt="search" />
                 <img className='madortillName' src={logoMador} alt="logo" onClick={() => {navigate("/"); openMenu(false);}}/>
-                <div className={isActive ? "hamburger is-active" : "hamburger "} id="hamburger-1" onClick={() => openMenu()}>
+                <div className={isMenuIcon ? "hamburger is-active" : "hamburger"
+            } id="hamburger-1" onClick={() => openMenu()}>
                     <span className="line"></span>
                     <span className="line"></span>
                     <span className="line"></span>

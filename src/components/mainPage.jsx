@@ -48,7 +48,6 @@ const MainPage = (props) => {
                     מלא מלא מלא מלא מילים והסבר ממש ממש ממש מפורט על המדור המהמם שלנו.
                 </div>
             </section>
-
             <section id="section3" className='section3'>
                 <PickingSubSubject navbarMenu={props.navbarMenu} changePage={props.changePage} />
             </section>

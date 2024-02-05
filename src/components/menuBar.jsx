@@ -28,7 +28,6 @@ const MenuBar = (props) => {
 
     useEffect(() => {
         for (let i = 0; i < props.navbarMenu.length; i++) {
-
             if (props.navbarMenu[i]["item"] === currentItem["item"]) {
                 setChosenItem(true);
                 if (currentItem["item"] === "עמוד הבית") {
